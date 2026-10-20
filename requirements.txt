@@ -1,0 +1,5 @@
+pandas
+openpyxl
+matplotlib
+pytest
+openai>=1.0

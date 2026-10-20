@@ -1,0 +1,9 @@
+date,product,category,price,quantity,region
+2026-07-01,Laptop,Electronics,1200,10,North
+2026-07-03,Mouse,Electronics,25,80,North
+2026-07-10,Keyboard,Electronics,60,40,South
+2026-07-15,Laptop,Electronics,1200,8,South
+2026-08-01,Laptop,Electronics,1200,6,North
+2026-08-02,Mouse,Electronics,25,70,North
+2026-08-10,Keyboard,Electronics,60,30,South
+2026-08-15,Laptop,Electronics,1200,5,South

@@ -1,0 +1,158 @@
+[
+  {
+    "case_id": "coverage_001_missing_causal_claim_en",
+    "component": "coverage",
+    "description": "Bỏ sót phát biểu nhân quả bằng tiếng Anh.",
+    "draft_answer": "Revenue decreased by 35.58%. The advertising campaign caused the decline.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Revenue decreased by 35.58%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "compare_last_two_periods", "arguments": {"metric_col": "revenue"}, "result": {"status": "ok", "previous": 26000, "current": 16750}, "mode": "evaluation"}
+    ],
+    "expected_issue": true
+  },
+  {
+    "case_id": "coverage_002_complete_two_claims_en",
+    "component": "coverage",
+    "description": "Hai mệnh đề đều được trích xuất.",
+    "draft_answer": "Revenue decreased by 35.58%, while profit increased by 20%.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Revenue decreased by 35.58%.", "status": "VERIFIED", "evidence_ids": ["E0001"]},
+      {"claim_id": "C002", "claim": "profit increased by 20%.", "status": "VERIFIED", "evidence_ids": ["E0002"]}
+    ],
+    "evidence": [],
+    "expected_issue": false
+  },
+  {
+    "case_id": "coverage_003_missing_causal_claim_vi",
+    "component": "coverage",
+    "description": "Bỏ sót phát biểu nguyên nhân bằng tiếng Việt.",
+    "draft_answer": "Doanh thu giảm 35,58%. Chiến dịch quảng cáo là nguyên nhân.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Doanh thu giảm 35,58%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [],
+    "expected_issue": true
+  },
+  {
+    "case_id": "coverage_004_no_analytical_statement",
+    "component": "coverage",
+    "description": "Câu dẫn nhập không chứa kết luận phân tích.",
+    "draft_answer": "Here is a short introduction.",
+    "claims": [],
+    "evidence": [],
+    "expected_issue": false
+  },
+  {
+    "case_id": "coverage_005_numeric_claim_missing",
+    "component": "coverage",
+    "description": "Phát biểu định lượng bị bỏ khỏi danh sách claim.",
+    "draft_answer": "Revenue decreased by 35.58%.",
+    "claims": [],
+    "evidence": [],
+    "expected_issue": true
+  },
+  {
+    "case_id": "coverage_006_full_vietnamese_coverage",
+    "component": "coverage",
+    "description": "Phát biểu tiếng Việt được bao phủ đầy đủ.",
+    "draft_answer": "Doanh thu giảm 35,58%.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Doanh thu giảm 35,58%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [],
+    "expected_issue": false
+  },
+  {
+    "case_id": "numeric_001_correct_percentage",
+    "component": "numeric",
+    "description": "Phần trăm giảm khớp với giá trị kỳ trước và kỳ hiện tại.",
+    "draft_answer": "Revenue decreased by 35.58%.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Revenue decreased by 35.58%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "compare_last_two_periods", "arguments": {"metric_col": "revenue"}, "result": {"status": "ok", "previous": 26000, "current": 16750}, "mode": "evaluation"}
+    ],
+    "expected_issue": false
+  },
+  {
+    "case_id": "numeric_002_wrong_percentage",
+    "component": "numeric",
+    "description": "Phát biểu phần trăm sai so với phép tính từ hai kỳ.",
+    "draft_answer": "Revenue decreased by 30%.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Revenue decreased by 30%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "compare_last_two_periods", "arguments": {"metric_col": "revenue"}, "result": {"status": "ok", "previous": 26000, "current": 16750}, "mode": "evaluation"}
+    ],
+    "expected_issue": true
+  },
+  {
+    "case_id": "numeric_003_wrong_direction",
+    "component": "numeric",
+    "description": "Độ lớn đúng nhưng nói tăng thay vì giảm.",
+    "draft_answer": "Revenue increased by 35.58%.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Revenue increased by 35.58%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "compare_last_two_periods", "arguments": {"metric_col": "revenue"}, "result": {"status": "ok", "previous": 26000, "current": 16750}, "mode": "evaluation"}
+    ],
+    "expected_issue": true
+  },
+  {
+    "case_id": "numeric_004_wrong_metric",
+    "component": "numeric",
+    "description": "Không dùng dữ liệu doanh thu để xác minh lợi nhuận.",
+    "draft_answer": "Profit increased by 20%.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Profit increased by 20%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "compare_last_two_periods", "arguments": {"metric_col": "revenue"}, "result": {"status": "ok", "previous": 26000, "current": 16750}, "mode": "evaluation"}
+    ],
+    "expected_issue": true
+  },
+  {
+    "case_id": "numeric_005_correct_vietnamese_decimal",
+    "component": "numeric",
+    "description": "Phần trăm dùng dấu phẩy thập phân tiếng Việt.",
+    "draft_answer": "Doanh thu giảm 35,58%.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Doanh thu giảm 35,58%.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "compare_last_two_periods", "arguments": {"metric_col": "revenue"}, "result": {"status": "ok", "previous": 26000, "current": 16750}, "mode": "evaluation"}
+    ],
+    "expected_issue": false
+  },
+  {
+    "case_id": "numeric_006_ambiguous_product_subject",
+    "component": "numeric",
+    "description": "Không tự chọn sản phẩm khi có nhiều đối tượng có thể phù hợp.",
+    "draft_answer": "Revenue was 4200.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Revenue was 4200.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "group_metric", "arguments": {"dimension_col": "product", "metric_col": "revenue"}, "result": {"status": "ok", "dimension_col": "product", "metric_col": "revenue", "rows": [{"product": "Laptop", "revenue": 34800}, {"product": "Keyboard", "revenue": 4200}]}, "mode": "evaluation"}
+    ],
+    "expected_issue": true
+  },
+  {
+    "case_id": "numeric_007_wrong_absolute_change",
+    "component": "numeric",
+    "description": "Mức thay đổi tuyệt đối không khớp với phép trừ hai kỳ.",
+    "draft_answer": "Revenue decreased by 8000.",
+    "claims": [
+      {"claim_id": "C001", "claim": "Revenue decreased by 8000.", "status": "VERIFIED", "evidence_ids": ["E0001"]}
+    ],
+    "evidence": [
+      {"tool_name": "compare_last_two_periods", "arguments": {"metric_col": "revenue"}, "result": {"status": "ok", "previous": 26000, "current": 16750}, "mode": "evaluation"}
+    ],
+    "expected_issue": true
+  }
+]

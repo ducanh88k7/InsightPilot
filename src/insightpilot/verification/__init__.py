@@ -47,3 +47,21 @@ __all__ = [
     "VerificationReport",
     "VerificationStatus",
 ]
+
+from .evaluation import (
+    ClassificationMetrics,
+    EvaluationCase,
+    EvaluationCaseResult,
+    VerificationEvaluationReport,
+    load_evaluation_cases,
+    run_verification_evaluation,
+)
+
+__all__ += [
+    "ClassificationMetrics",
+    "EvaluationCase",
+    "EvaluationCaseResult",
+    "VerificationEvaluationReport",
+    "load_evaluation_cases",
+    "run_verification_evaluation",
+]
